@@ -15,7 +15,11 @@ function gen_word(len) {
     return new_word;
 }
 
+const ul = document.getElementsByTagName('ul')[0];
 for (let i = 0; i < 100; i++) {
     let len = [3, 4, 5, 6][Math.floor(Math.random() * 4)];
-    console.log(gen_word(len));
+		let word = gen_word(len);
+		const li = document.createElement('li');
+		li.textContent =  word[0].toUpperCase() + word.slice(1);
+		ul.appendChild(li);
 }
